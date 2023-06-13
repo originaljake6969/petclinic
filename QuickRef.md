@@ -21,4 +21,4 @@ Insecure Deserialization:
 
 TODO
 
-<!-- PetClinic Pet Clinic answer key walkthrough walk through -->
+<!-- PetClinic Pet Clinic answer key walkthrough walk through solutions -->
